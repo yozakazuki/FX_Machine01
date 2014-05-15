@@ -12,17 +12,16 @@ import application.model.Drink;
 public class DrinkButtonController implements Initializable, ControllerIFace {
 	@FXML Button drinkButton;
 	@FXML RadioButton radioButton;
-	private int buttonNumber;
 
-	public DrinkButtonController(int _buttonNumber) {
-		this.buttonNumber = _buttonNumber;
+	public DrinkButtonController() {
+
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Drink drink = new Drink();
-		this.drinkButton.setText(drink.getName(buttonNumber)); 
-		String drinkPriceString = String.valueOf(drink.getPrice(buttonNumber));
+		this.drinkButton.setText(drink.getName()); 
+		String drinkPriceString = String.valueOf(drink.getPrice());
 		this.radioButton.setText(drinkPriceString);
 	}
 

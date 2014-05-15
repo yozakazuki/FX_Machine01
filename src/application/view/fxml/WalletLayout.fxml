@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<fx:root fx:id="wallet" text="10000" type="TextField" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
