@@ -9,13 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import application.model.Drink;
 
-public class DrinkButtonController implements Initializable, ControllerIFace {
+public class DrinkController implements Initializable, ControllerIFace {
 	@FXML Button drinkButton;
 	@FXML RadioButton radioButton;
-
-	public DrinkButtonController() {
-
-	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -27,7 +23,7 @@ public class DrinkButtonController implements Initializable, ControllerIFace {
 
 	@Override
 	public URL getUrl() {
-		URL url = this.getClass().getResource("../view/fxml/DrinkButtonLayout.fxml");
+		URL url = this.getClass().getResource("../view/fxml/DrinkLayout.fxml");
 		return url;
 	}
 

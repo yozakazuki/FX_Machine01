@@ -7,17 +7,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
-public class WalletController implements Initializable, ControllerIFace {
-	@FXML TextField wallet;
+public class PaymentController implements Initializable, ControllerIFace {
+	@FXML TextField payment;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.wallet.setEditable(false);
+		this.payment.setText("0");
 	}
 
 	@Override
 	public URL getUrl() {
-		URL url = this.getClass().getResource("../view/fxml/WalletLayout.fxml");
+		URL url = this.getClass().getResource("../view/fxml/PaymentLayout.fxml");
 		return url;
 	}
 

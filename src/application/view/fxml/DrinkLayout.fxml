@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<fx:root fx:id="drinkButton" alignment="CENTER" contentDisplay="TOP"
+	mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" text="button"
+	type="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<graphic>
+		<RadioButton fx:id="radioButton" contentDisplay="BOTTOM"
+			mnemonicParsing="false" text="RadioButton" />
+	</graphic>
+</fx:root>

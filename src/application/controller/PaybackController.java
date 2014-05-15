@@ -5,20 +5,19 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
-public class WalletController implements Initializable, ControllerIFace {
-	@FXML TextField wallet;
+public class PaybackController implements Initializable, ControllerIFace {
+	@FXML Button payback;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.wallet.setEditable(false);
+		this.payback.setText("お釣りボタン");
 	}
 
 	@Override
 	public URL getUrl() {
-		URL url = this.getClass().getResource("../view/fxml/WalletLayout.fxml");
+		URL url = this.getClass().getResource("../view/fxml/PaybackLayout.fxml");
 		return url;
 	}
-
 }

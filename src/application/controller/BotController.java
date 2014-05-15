@@ -5,19 +5,19 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
-public class WalletController implements Initializable, ControllerIFace {
-	@FXML TextField wallet;
+public class BotController implements Initializable, ControllerIFace {
+	@FXML GridPane bot;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.wallet.setEditable(false);
+
 	}
 
 	@Override
 	public URL getUrl() {
-		URL url = this.getClass().getResource("../view/fxml/WalletLayout.fxml");
+		URL url = this.getClass().getResource("../view/fxml/BotLayout.fxml");
 		return url;
 	}
 
