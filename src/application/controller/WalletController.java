@@ -12,6 +12,7 @@ public class WalletController implements Initializable, ControllerIFace {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		this.wallet.setText("10000");
 		this.wallet.setEditable(false);
 	}
 

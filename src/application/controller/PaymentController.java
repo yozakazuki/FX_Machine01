@@ -13,6 +13,7 @@ public class PaymentController implements Initializable, ControllerIFace {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		this.payment.setText("0");
+		this.payment.setEditable(false);
 	}
 
 	@Override

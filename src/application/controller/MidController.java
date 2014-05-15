@@ -12,6 +12,7 @@ import application.helper.FXMLLoad;
 
 public class MidController implements Initializable, ControllerIFace {
 	@FXML GridPane mid;
+	@FXML GridPane input;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -22,10 +23,20 @@ public class MidController implements Initializable, ControllerIFace {
 		Button payback = new Button();
 		PaybackController paybackController = new PaybackController();
 		FXMLLoad.fxmlLoad(paybackController, payback);
-		
+
 		TextField payment = new TextField();
 		PaymentController paymentController = new PaymentController();
 		FXMLLoad.fxmlLoad(paymentController, payment);
+
+
+		for (int buttonX = 0; buttonX < 2; buttonX++) {
+			for (int buttonY = 0; buttonY < 3; buttonY++) {
+				Button inputButton = new Button();
+				InputController inputController = new InputController(buttonX + buttonY);
+				FXMLLoad.fxmlLoad(inputController, inputButton);
+				this.input.add(inputButton, buttonX, buttonY);
+			}
+		}
 
 		this.mid.add(wallet, 0, 0);
 		this.mid.add(payback, 1, 0);

@@ -14,8 +14,8 @@ public class TopController implements Initializable, ControllerIFace {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		for (int buttonY = 0; buttonY < 2; buttonY++) {
-			for (int buttonX = 0; buttonX < 4; buttonX++) {
+		for (int buttonX = 0; buttonX < 4; buttonX++) {
+			for (int buttonY = 0; buttonY < 2; buttonY++) {
 				Button drink = new Button();
 				DrinkController drinkButtonController = new DrinkController();
 				FXMLLoad.fxmlLoad(drinkButtonController, drink);
