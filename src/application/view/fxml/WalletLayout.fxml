@@ -3,5 +3,4 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<fx:root fx:id="wallet" type="TextField"
-	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<TextField fx:id="wallet" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />

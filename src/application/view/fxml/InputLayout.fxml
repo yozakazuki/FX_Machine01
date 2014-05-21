@@ -3,4 +3,4 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<fx:root fx:id="input" mnemonicParsing="false" text="Button" type="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<Button fx:id="input" mnemonicParsing="false" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />

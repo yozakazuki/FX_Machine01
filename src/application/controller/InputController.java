@@ -6,10 +6,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import application.model.Input;
 
 public class InputController implements Initializable, ControllerIFace {
 	@FXML Button input;
-	private static int[ ] INPUT_MONEY = {10, 50, 100, 500, 1000, 5000};;
+	
 	private int index;
 
 	public InputController(int _index) {
@@ -18,8 +19,8 @@ public class InputController implements Initializable, ControllerIFace {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		int money = INPUT_MONEY[index];
-		String text = String.valueOf(money);
+		Input input = new Input();
+		String text = input.getMoneyText(index);
 		this.input.setText(text);
 	}
 
@@ -28,4 +29,5 @@ public class InputController implements Initializable, ControllerIFace {
 		URL url = this.getClass().getResource("../view/fxml/InputLayout.fxml");
 		return url;
 	}
+
 }

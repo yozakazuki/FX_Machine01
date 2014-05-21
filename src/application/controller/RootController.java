@@ -7,17 +7,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import application.MainApplication;
 import application.helper.FXMLLoad;
 
-public class RootController implements Initializable {
+public class RootController implements ControllerIFace, Initializable {
 	@FXML AnchorPane root;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		GridPane main = new GridPane();
 		MainController controller = new MainController();
-		FXMLLoad.fxmlLoad(controller, main);
+		GridPane main = (GridPane) FXMLLoad.fxmlLoad(controller);
 		this.root.getChildren().add(main);
 	}
 
+	@Override
+	public URL getUrl() {
+		URL url = MainApplication.class.getResource("view/fxml/RootLayout.fxml");
+		return url;
+	}
+	
 }

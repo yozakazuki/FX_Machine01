@@ -13,17 +13,17 @@ public class MainController implements Initializable, ControllerIFace {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		GridPane top = new GridPane();
-		TopController topController = new TopController();
-		FXMLLoad.fxmlLoad(topController, top);
-
-		GridPane mid = new GridPane();
-		MidController midController = new MidController();
-		FXMLLoad.fxmlLoad(midController, mid);
-
-		GridPane bot = new GridPane();
 		BotController botController = new BotController();
-		FXMLLoad.fxmlLoad(botController, bot);
+
+		TopController topController = new TopController(botController);
+
+		MidController midController = new MidController(topController);
+
+		topController.setMidController(midController);
+
+		GridPane top = (GridPane) FXMLLoad.fxmlLoad(topController);
+		GridPane mid = (GridPane) FXMLLoad.fxmlLoad(midController);
+		GridPane bot = (GridPane) FXMLLoad.fxmlLoad(botController);
 
 		this.main.add(top, 0, 0);
 		this.main.add(mid, 0, 1);

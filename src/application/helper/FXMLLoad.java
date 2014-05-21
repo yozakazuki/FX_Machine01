@@ -9,16 +9,17 @@ import application.controller.ControllerIFace;
 
 public class FXMLLoad {
 
-	public static void fxmlLoad(ControllerIFace controller, Node node) {
+	public static Node fxmlLoad(ControllerIFace controller) {
 		URL url = controller.getUrl();
 		FXMLLoader loader = new FXMLLoader(url);
-		loader.setRoot(node);
 		loader.setController(controller);
 
 		try {
-			loader.load();
+			Node node = loader.load();
+			return node;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 }
