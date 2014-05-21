@@ -6,9 +6,9 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import application.MainApplication;
 
-public class TopController implements ControllerIFace, Initializable {
+public class DrinkButtonController implements ControllerIFace, Initializable {
 
-	public TopController() {
+	public DrinkButtonController() {
 	}
 
 	@Override

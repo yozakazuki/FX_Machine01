@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import application.controller.RootController;
-import application.helper.FXMLLoad;
+import application.system.tool.FXMLLoad;
 
 public class MainApplication extends Application {
 

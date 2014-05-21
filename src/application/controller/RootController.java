@@ -8,14 +8,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import application.MainApplication;
-import application.helper.FXMLLoad;
+import application.system.tool.FXMLLoad;
 
 public class RootController implements ControllerIFace, Initializable {
 	@FXML AnchorPane root;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		MainController controller = new MainController();
+		RootController controller = new RootController();
 		GridPane main = (GridPane) FXMLLoad.fxmlLoad(controller);
 		this.root.getChildren().add(main);
 	}
