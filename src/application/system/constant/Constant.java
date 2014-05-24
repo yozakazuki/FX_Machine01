@@ -7,24 +7,26 @@ public class Constant {
 	private final static String[] DRINK_NAMES = {"コーラ", "オレンジ","グレープ", "アクエリアス", "お茶", "紅茶", "コーヒー", "水"};
 	private final static int[]    DRINK_PRICE = {100, 120, 150};
 
-	private String name;
-	private int price;
-	
 	private Constant() {
-		Random randomName = new Random();
-		int nameIndex = randomName.nextInt(DRINK_NAMES.length);
-		name = DRINK_NAMES[nameIndex];
-		
-		Random randomPrice = new Random();
-		int priceIndex = randomPrice.nextInt(DRINK_PRICE.length);
-		price = DRINK_PRICE[priceIndex];
 	}
 
-	public String getName() {
+	public static int getInputMoney(int index) {
+		int inputMoney = INPUT_MONEY[index];
+		return inputMoney;
+	}
+
+	public static String getName() {
+		Random randomName = new Random();
+		int nameIndex = randomName.nextInt(DRINK_NAMES.length);
+		String name = DRINK_NAMES[nameIndex];
 		return name;
 	}
-	
-	public int getPrice() {
+
+	public static int getPrice() {
+		Random randomPrice = new Random();
+		int priceIndex = randomPrice.nextInt(DRINK_PRICE.length);
+		int price = DRINK_PRICE[priceIndex];
 		return price;
 	}
+
 }

@@ -3,6 +3,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<Button fx:id="drinkButton" contentDisplay="TOP" mnemonicParsing="false" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<graphic><RadioButton fx:id="radio" mnemonicParsing="false" text="RadioButton" />
+<Button fx:id="drinkButton" contentDisplay="TOP" mnemonicParsing="false" text="drinkButton" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<graphic><RadioButton fx:id="radioButton" mnemonicParsing="false" text="radioButton" />
 </graphic></Button>

@@ -1,11 +1,15 @@
 package application.model;
 
-public class Input {
-	
+import application.system.constant.Constant;
 
-	public String getMoneyText(int index) {
-		int money   = INPUT_MONEY[index];
-		String text = String.valueOf(money);
-		return text;
+public class Input {
+	private final int inputMoney;
+
+	public Input(int index) {
+		this.inputMoney = Constant.getInputMoney(index);
 	}
+
+	public int getInputMoney() {
+		return inputMoney;
 	}
+}
