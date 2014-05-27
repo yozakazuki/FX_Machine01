@@ -37,7 +37,7 @@ public class TopController implements ControllerIFace, Initializable {
 				Button drinkButton = drinkButtonList.get((i*2) + j);
 				this.top.add(drinkButton, i, j);	
 				radioList.add((RadioButton) drinkButton.getGraphic());
-				DrinkButtonAction drinkButtonAction = new DrinkButtonAction(drinkButton, this.payment, radioList, textArea);
+				DrinkButtonAction drinkButtonAction = new DrinkButtonAction(drinkButton, this.payment, radioList, this.textArea);
 				drinkButton.setOnAction(drinkButtonAction);
 			}
 		}

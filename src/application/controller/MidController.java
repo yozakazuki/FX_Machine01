@@ -14,6 +14,7 @@ import application.MainApplication;
 import application.action.InputButtonAction;
 import application.action.PaybackButtonAction;
 import application.model.Input;
+import application.system.constant.Constant;
 
 public class MidController implements ControllerIFace, Initializable {
 	@FXML GridPane mid;
@@ -37,7 +38,7 @@ public class MidController implements ControllerIFace, Initializable {
 			radioList.add((RadioButton) drinkButton.getGraphic());
 		}
 
-		this.wallet.setText("10000");
+		this.wallet.setText(Constant.getDefaultWalletText());
 		this.wallet.setEditable(false);
 
 		for (int x = 0; x < 2; x++) {
