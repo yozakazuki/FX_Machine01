@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import application.MainApplication;
-import application.system.constant.Constant;
+import application.model.Drink;
 
 public class DrinkButtonController implements ControllerIFace, Initializable {
 	@FXML Button drinkButton;
@@ -16,8 +16,8 @@ public class DrinkButtonController implements ControllerIFace, Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.drinkButton.setText(Constant.getName());
-		String drinkPriceString = String.valueOf(Constant.getPrice());
+		this.drinkButton.setText(Drink.getName());
+		String drinkPriceString = String.valueOf(Drink.getPrice());
 		this.radioButton.setText(drinkPriceString);
 	}
 
@@ -25,10 +25,6 @@ public class DrinkButtonController implements ControllerIFace, Initializable {
 	public URL getUrl() {
 		URL url = MainApplication.class.getResource("view/fxml/DrinkButtonLayout.fxml");
 		return url;
-	}
-
-	public RadioButton getRadioButton() {
-		return radioButton;
 	}
 
 }

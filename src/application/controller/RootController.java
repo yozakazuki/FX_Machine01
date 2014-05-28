@@ -10,6 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import application.MainApplication;
+import application.model.History;
+import application.model.Payment;
+import application.system.constant.Constant;
 import application.system.tool.FXMLLoad;
 
 public class RootController implements ControllerIFace, Initializable {
@@ -18,26 +21,25 @@ public class RootController implements ControllerIFace, Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ArrayList<Button> drinkButtonList = new ArrayList<Button>();
-		int  low    = 4;
-		int  column = 2;
+		Payment paymentModel = new Payment();
+		History historyModel = new History();
 
-		for (int i = 0; i < (low * column); i++) {
+		int row    = Constant.getGridLow();
+		int column = Constant.getGridColumn();
+
+		for (int i = 0; i < (row * column); i++) {
 			DrinkButtonController controller = new DrinkButtonController();
 			Button drinkButton               = (Button) FXMLLoad.fxmlLoad(controller);
 			drinkButtonList.add(drinkButton);
 		}
 
-		TopController topController = new TopController(drinkButtonList, low, column);
-		MidController midController = new MidController(drinkButtonList);
-		BotController botController = new BotController();
+		TopController topController = new TopController(drinkButtonList, paymentModel, historyModel, row, column);
+		MidController midController = new MidController(drinkButtonList, paymentModel);
+		BotController botController = new BotController(historyModel);
 
-		GridPane   mid = (GridPane) FXMLLoad.fxmlLoad(midController);
+		GridPane top   = (GridPane) FXMLLoad.fxmlLoad(topController);
+		GridPane mid   = (GridPane) FXMLLoad.fxmlLoad(midController);
 		BorderPane bot = (BorderPane) FXMLLoad.fxmlLoad(botController);
-
-		topController.setPayment(midController.getPayment());
-		topController.setTextArea(botController.getTextArea());
-
-		GridPane top = (GridPane) FXMLLoad.fxmlLoad(topController);
 
 		this.root.add(top, 0, 0);
 		this.root.add(mid, 0, 1);

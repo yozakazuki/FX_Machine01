@@ -6,42 +6,35 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import application.helper.Function;
+import application.model.History;
+import application.model.Payment;
 
 public class DrinkButtonAction implements EventHandler<ActionEvent> {
-	private TextField payment;
+	private Payment paymentModel;
+	private History historyModel;
 	private Button drinkButton;
 	private ArrayList<RadioButton> radioList;
-	private TextArea textArea;
 
-	public DrinkButtonAction(Button _drinkButton, TextField _payment, ArrayList<RadioButton> _radioList, TextArea _textArea) { 
-		this.payment     = _payment;
-		this.drinkButton = _drinkButton;
-		this.radioList   = _radioList;
-		this.textArea    = _textArea;
+	public DrinkButtonAction(Payment _paymentModel, History _historyModel, Button _drinkButton, ArrayList<RadioButton> _radioList) {
+		this.paymentModel = _paymentModel;
+		this.historyModel = _historyModel;
+		this.drinkButton  = _drinkButton;
+		this.radioList    = _radioList;
 	}
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		String drinkName        = this.drinkButton.getText();
-		RadioButton radioButton = (RadioButton) drinkButton.getGraphic();
-		String drinkPriceText   = radioButton.getText();
-		int drinkPrice          = Integer.valueOf(drinkPriceText);
-		int paymentMoney        = Integer.valueOf(this.payment.getText());
+		String drinkName        = drinkButton.getText();
+		RadioButton radioButton = ((RadioButton) drinkButton.getGraphic());
+		int drinkPrice          = Integer.valueOf(radioButton.getText());
 
-		if (paymentMoney < drinkPrice) {
+		if (this.paymentModel.canPurchase(drinkPrice)) {
 			return;
 		}
 
-		paymentMoney -= drinkPrice;
-		this.payment.setText(String.valueOf(paymentMoney));
-
-		Function.setLight(radioList, paymentMoney);
-
-		String crlf = System.getProperty("line.separator");
-		this.textArea.appendText(drinkName + " : " + drinkPrice + "円" + crlf);
+		this.paymentModel.bought(drinkPrice);
+		this.paymentModel.setLight(radioList);
+		this.historyModel.bought(drinkName, String.valueOf(drinkPrice));
 	}
 
 }

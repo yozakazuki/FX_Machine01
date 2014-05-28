@@ -3,19 +3,19 @@ package application.model;
 import application.system.constant.Constant;
 
 public class Drink {
-	private final String name;
-	private final int price;
+	private static String name;
+	private static int price;
 
-	public Drink() {
-		this.name = Constant.getName();
-		this.price = Constant.getPrice();
-	}
+	private Drink() {
+			}
 
-	public String getName() {
+	public static String getName() {
+		name = Constant.getName();
 		return name;
 	}
 
-	public int getPrice() {
+	public static int getPrice() {
+		price = Constant.getPrice();
 		return price;
 	}
 
